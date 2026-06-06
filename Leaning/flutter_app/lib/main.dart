@@ -67,25 +67,32 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
           height: double.infinity,
           width: double.infinity,
-           margin: EdgeInsets.all(50.0),
-          padding: EdgeInsets.all(50.0),
-          decoration: BoxDecoration(
-            color: Colors.red,
-            borderRadius: BorderRadius.circular(25.0),
-          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                height: 100.0,
+                width: 100.0,
 
-          child: Container(
-            height: double.infinity,
-            width: double.infinity,
-            padding: EdgeInsets.all(50.0),
-            decoration: BoxDecoration(
-              color: Colors.orange,
-              borderRadius: BorderRadius.circular(25.0),
-            ),
-            child: Text('HELLO',
-            style: TextStyle(
-              color: Colors.black
-            ),),
+                margin: EdgeInsets.all(50.0),
+                padding: EdgeInsets.all(50.0),
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(25.0),
+                ),
+              ),
+              Container(
+                height: 100.0,
+                width: 100.0,
+                margin: EdgeInsets.all(50.0),
+                padding: EdgeInsets.all(50.0),
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(25.0),
+                ),
+              ),
+            ],
           ),
         ),
       ),
