@@ -61,9 +61,9 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Image.network('https://img.magnific.com/free-vector/paper-style-gradient-blue-wavy-background_23-2149121741.jpg?semt=ais_hybrid&w=740&q=80',
+      body: Image.asset('assets/images/Background.jpg',
       height: double.infinity,
-      fit: BoxFit.cover
+      fit: BoxFit.cover 
       )
     );
   }
