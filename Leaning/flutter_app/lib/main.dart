@@ -61,41 +61,10 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Container(
-          height: double.infinity,
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                height: 100.0,
-                width: 100.0,
-
-                margin: EdgeInsets.all(50.0),
-                padding: EdgeInsets.all(50.0),
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(25.0),  
-                ),
-              ),
-              Container(
-                height: 100.0,
-                width: 100.0,
-                margin: EdgeInsets.all(50.0),
-                padding: EdgeInsets.all(50.0),
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(25.0),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+      body: Image.network('https://img.magnific.com/free-vector/paper-style-gradient-blue-wavy-background_23-2149121741.jpg?semt=ais_hybrid&w=740&q=80',
+      height: double.infinity,
+      fit: BoxFit.cover
+      )
     );
   }
 }
