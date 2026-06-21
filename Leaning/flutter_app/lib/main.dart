@@ -53,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
+        leading: Icon(Icons.notification_add, color: Colors.amber),
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
         // change color while the other colors stay the same.
@@ -61,16 +62,19 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Stack(
-        children: [
-          Image.asset(
-            'assets/images/Background.jpg',
-            height: 300,
-            fit: BoxFit.cover,
-          ),
+      body: Container(
+        padding: EdgeInsets.all(50.0),
+        child: Stack(
+          children: [
+            Image.asset(
+              'assets/images/Background.jpg',
+              height: 300,
+              fit: BoxFit.cover,
+            ),
 
-          SizedBox(height: 300, child: Center(child: Text('FLUTTER'))),
-        ],
+            SizedBox(height: 300, child: Center(child: Text('FLUTTER'))),
+          ],
+        ),
       ),
     );
   }
