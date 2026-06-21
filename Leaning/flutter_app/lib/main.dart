@@ -13,15 +13,27 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal,
-        brightness: Brightness.dark
-        )
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.teal,
+          brightness: Brightness.dark,
+        ),
       ),
-    
-    home: Scaffold(
-      
-    ),
 
+      home: Scaffold(
+        appBar: AppBar(title: Text("Flutter APP"), centerTitle: true),
+
+        bottomNavigationBar: NavigationBar(
+          destinations: [
+            NavigationDestination(icon: Icon(Icons.home), label: 'Home',),
+            NavigationDestination(icon: Icon(Icons.person), label: 'Profile' )
+            ,
+          ],
+          onDestinationSelected: (int value) {
+            print(value);
+          },
+          selectedIndex: 0,
+        ),
+      ),
     );
   }
 }
