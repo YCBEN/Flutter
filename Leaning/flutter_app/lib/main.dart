@@ -66,13 +66,19 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: EdgeInsets.all(50.0),
         child: Stack(
           children: [
-            Image.asset(
-              'assets/images/Background.jpg',
-              height: 300,
-              fit: BoxFit.cover,
-            ),
+           
 
             SizedBox(height: 300, child: Center(child: Text('FLUTTER'))),
+
+            ListTile(
+              leading: Icon(Icons.join_full),
+              tileColor: Colors.red,
+              title: Text('Hello !'),
+              trailing: Text('0_o'),
+              onTap: () {
+                print('Test');
+              },
+            )
           ],
         ),
       ),
