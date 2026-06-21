@@ -62,26 +62,10 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Container(
-        padding: EdgeInsets.all(50.0),
-        child: Stack(
-          children: [
-           
-
-            SizedBox(height: 300, child: Center(child: Text('FLUTTER'))),
-
-            ListTile(
-              leading: Icon(Icons.join_full),
-              tileColor: Colors.red,
-              title: Text('Hello !'),
-              trailing: Text('0_o'),
-              onTap: () {
-                print('Test');
-              },
-            )
-          ],
-        ),
-      ),
-    );
+      body: Wrap(
+        children: [
+          Text('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
+        ],
+      )    );
   }
 }
