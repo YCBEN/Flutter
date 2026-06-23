@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/pages/views/home_page.dart';
-import 'package:flutter_app/pages/views/profile_page.dart';
+import 'package:flutter_app/views/pages/home_page.dart';
+import 'package:flutter_app/views/pages/profile_page.dart';
 
-import '../Widgets/navbar_widget.dart';
+
+import '../../pages/widgets/navbar_widget.dart';
 
 
 List<Widget> pages = [
