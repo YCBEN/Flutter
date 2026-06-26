@@ -15,70 +15,73 @@ class _ProfilePageState extends State<ProfilePage> {
   double sliderValue = 0.0;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Center(child: Text("Hello !")),
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(child: Text("Hello !")),
 
-          TextField(
-            decoration: InputDecoration(
-              border: UnderlineInputBorder(),
-              hintText: "Name",
+            TextField(
+              decoration: InputDecoration(
+                border: UnderlineInputBorder(),
+                hintText: "Name",
+              ),
+              onChanged: (value) {
+                name.value = value;
+              },
             ),
-            onChanged: (value) {
-              name.value = value;
-            },
-          ),
 
-          Checkbox.adaptive(
-            tristate: true,
-            value: isChecked,
-            onChanged: (bool? value) {
-              setState(() {
-                isChecked = value;
-              });
-            },
-          ),
-          CheckboxListTile.adaptive(
-            tristate: true,
-            value: isChecked,
-            title: Text('Click me'),
-            onChanged: (bool? value) {
-              setState(() {
-                isChecked = value;
-              });
-            },
-          ),
-          Switch.adaptive(
-            value: isSwitched,
-            onChanged: (bool value) {
-              setState(() {
-                isSwitched = value;
-              });
-            },
-          ),
-          SwitchListTile.adaptive(
-            value: isSwitched,
-            onChanged: (bool value) {
-              setState(() {
-                isSwitched = value;
-              });
-            },
-          ),
-          Slider.adaptive(
-            max: 100,
-            divisions: 200,
-            value: sliderValue,
-            onChanged: (double value) {
-              setState(() {
-                sliderValue = value;
-              });
-              print(value);
-            },
-          ),
-        ],
+            Checkbox.adaptive(
+              tristate: true,
+              value: isChecked,
+              onChanged: (bool? value) {
+                setState(() {
+                  isChecked = value;
+                });
+              },
+            ),
+            CheckboxListTile.adaptive(
+              tristate: true,
+              value: isChecked,
+              title: Text('Click me'),
+              onChanged: (bool? value) {
+                setState(() {
+                  isChecked = value;
+                });
+              },
+            ),
+            Switch.adaptive(
+              value: isSwitched,
+              onChanged: (bool value) {
+                setState(() {
+                  isSwitched = value;
+                });
+              },
+            ),
+            SwitchListTile.adaptive(
+              value: isSwitched,
+              onChanged: (bool value) {
+                setState(() {
+                  isSwitched = value;
+                });
+              },
+            ),
+            Slider.adaptive(
+              max: 100,
+              divisions: 200,
+              value: sliderValue,
+              onChanged: (double value) {
+                setState(() {
+                  sliderValue = value;
+                });
+                print(value);
+              },
+            ),
+            Image.asset('assets/images/Background.jpg'),
+          ],
+        ),
       ),
     );
   }
