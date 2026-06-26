@@ -39,6 +39,16 @@ class _ProfilePageState extends State<ProfilePage> {
               });
             },
           ),
+          CheckboxListTile(
+            tristate: true,
+            value: isChecked,
+            title: Text('Click me'),
+            onChanged: (bool? value) {
+              setState(() {
+                isChecked = value;
+              });
+            },
+          ),
         ],
       ),
     );
