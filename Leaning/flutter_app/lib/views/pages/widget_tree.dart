@@ -14,7 +14,12 @@ class WidgetTree extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter APP'),
+        title: ValueListenableBuilder(
+          valueListenable: name,
+          builder: (context, name, child) {
+            return Text('Hello,' + name);
+          },
+        ),
         actions: [
           IconButton(
             onPressed: () {

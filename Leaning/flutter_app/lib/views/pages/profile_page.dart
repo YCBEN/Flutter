@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/data/notifiers.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -8,7 +9,8 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  String name = "";
+  TextEditingController controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,6 +25,9 @@ class _ProfilePageState extends State<ProfilePage> {
               border: UnderlineInputBorder(),
               hintText: "Name",
             ),
+            onChanged: (value) {
+              name.value = value;
+            },
           ),
         ],
       ),
