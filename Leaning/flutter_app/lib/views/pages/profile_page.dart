@@ -79,7 +79,23 @@ class _ProfilePageState extends State<ProfilePage> {
                 print(value);
               },
             ),
-            Image.asset('assets/images/Background.jpg'),
+            GestureDetector(
+              onTap: () {
+                print('Selected Pic');
+              },
+              child: Image.asset('assets/images/Background.jpg'),
+            ),
+            InkWell(
+              splashColor: Colors.teal,
+              onTap: () {
+                print('Selected Pic 2');
+              },
+              child: Container(
+                height: 200,
+                width: double.infinity,
+                color: Colors.white12,
+              ),
+            ),
           ],
         ),
       ),
