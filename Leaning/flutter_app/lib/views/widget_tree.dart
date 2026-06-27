@@ -36,10 +36,11 @@ class WidgetTree extends StatelessWidget {
           IconButton(
             onPressed: () {
               Navigator.push(
+                // we can use the pushReplacment to remove the previous page
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return SettingsPage();
+                    return SettingsPage(title: "Yacine");
                   },
                 ),
               );

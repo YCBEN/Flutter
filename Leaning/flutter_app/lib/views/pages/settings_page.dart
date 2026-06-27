@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/data/notifiers.dart';
 
 class SettingsPage extends StatefulWidget {
-  const SettingsPage({super.key});
+  const SettingsPage({super.key, required this.title});
 
+  final String title;
   @override
   State<SettingsPage> createState() => _SettingsPageState();
 }
@@ -23,7 +24,9 @@ class _SettingsPageState extends State<SettingsPage> {
             return Navigator.pop(context);
           },
         ),
-        title: Text('Settings'),
+        title: Text(
+          widget.title,
+        ), // when using a statfull widget we add the widget. before title
         automaticallyImplyLeading: false,
       ), // automaticallyImplyLeading: false is used to remove the automatic back button
       body: SingleChildScrollView(
