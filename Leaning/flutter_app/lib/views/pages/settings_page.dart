@@ -36,40 +36,60 @@ class _SettingsPageState extends State<SettingsPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Center(child: Text("Hello !")),
-              ElevatedButton(
-                onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      duration: Duration(seconds: 2),
-                      content: Text('SnackBar'),
-                      behavior: SnackBarBehavior.floating,
+
+              IntrinsicHeight(
+                //IntrinsicHeight forces the row to calculate the height of its tallest text/content child first.
+                child: Row(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            duration: Duration(seconds: 2),
+                            content: Text('SnackBar'),
+                            behavior: SnackBarBehavior.floating,
+                          ),
+                        );
+                      },
+                      child: Text('Show SnackBar'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.teal,
+                        foregroundColor: Colors.white,
+                      ),
                     ),
-                  );
-                },
-                child: Text('Show SnackBar'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.teal,
-                  foregroundColor: Colors.white,
+                    Container(
+                      height: double.infinity,
+                      child: VerticalDivider(color: Colors.white),
+                    ),
+
+                    ElevatedButton(
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: Text('Alert'),
+                              content: Text('Alert content'),
+                              actions: [
+                                FilledButton(
+                                  onPressed: () {},
+                                  child: Text('Close'),
+                                ),
+                                FilledButton(
+                                  onPressed: () {},
+                                  child: Text('Close'),
+                                ),
+                              ],
+                            ); // we can use the about dialog when we want toshow the licenses
+                          },
+                        );
+                      },
+                      child: Text('Open dialog '),
+                    ),
+                  ],
                 ),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) {
-                      return AlertDialog(
-                        title: Text('Alert'),
-                        content: Text('Alert content'),
-                        actions: [
-                          FilledButton(onPressed: () {}, child: Text('Close')),
-                          FilledButton(onPressed: () {}, child: Text('Close')),
-                        ],
-                      ); // we can use the about dialog when we want toshow the licenses
-                    },
-                  );
-                },
-                child: Text('Open dialog '),
-              ),
+              Divider(color: Colors.teal, thickness: 5, endIndent: 200),
               DropdownButton(
                 value: menuItem,
                 items: [
