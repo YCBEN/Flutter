@@ -109,7 +109,12 @@ class _SettingsPageState extends State<SettingsPage> {
                 onTap: () {
                   print('Selected Pic');
                 },
-                child: Image.asset('assets/images/Background.jpg'),
+                child: Image.asset(
+                  'assets/images/Background.jpg',
+                  width: double.infinity,
+                  height: 200,
+                  fit: BoxFit.cover,
+                ),
               ),
               InkWell(
                 splashColor: Colors.teal,
